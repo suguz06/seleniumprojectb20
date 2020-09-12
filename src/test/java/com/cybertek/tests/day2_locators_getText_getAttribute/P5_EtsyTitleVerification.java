@@ -30,7 +30,6 @@ public class P5_EtsyTitleVerification {
         // 4.Verify title:
         //
         // Expected: “Wooden spoon | Etsy”
-
    String actualTitle=driver.getTitle();
    String expectedTitle="Wooden spoon | Etsy";
 
