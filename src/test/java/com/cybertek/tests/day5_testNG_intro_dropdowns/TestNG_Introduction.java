@@ -45,7 +45,7 @@ public class TestNG_Introduction {
         String str2="TestNG";
         String str3="Test";
         Assert.assertTrue(str1.equals(str2));
-        Assert.assertTrue(str1.equals(str3),"str1 is not equal to str3");
+     //   Assert.assertTrue(str1.equals(str3),"str1 is not equal to str3");
 
         System.out.println("checking this line works or not???");
   Assert.assertEquals(str1, str2, "Failure message just in case str1 is not equal to str2");

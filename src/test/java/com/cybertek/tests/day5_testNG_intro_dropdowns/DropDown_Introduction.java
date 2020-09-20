@@ -3,11 +3,13 @@ package com.cybertek.tests.day5_testNG_intro_dropdowns;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class DropDown_Introduction {
@@ -35,6 +37,8 @@ WebDriver driver;
 
        Select simpleDropDown=new Select(driver.findElement(By.id("dropdown")));
 
+
+
         String actualSelectedOption = simpleDropDown.getFirstSelectedOption().getText();
 
 
@@ -45,6 +49,7 @@ WebDriver driver;
         Thread.sleep(3000);
 
         simpleDropDown.selectByVisibleText("Option 2");
+        System.out.println(simpleDropDown.getFirstSelectedOption().getText());
 
 
 
@@ -54,12 +59,28 @@ WebDriver driver;
 
         Select stateDropDown=new Select(driver.findElement(By.id("state")));
 
-        String actualStateOption = stateDropDown.getFirstSelectedOption().getText();
+
+       String actualStateOption = stateDropDown.getFirstSelectedOption().getText();
 
 String expected="Select a State";
         Assert.assertEquals(actualStateOption,expected, "default values different");
 
         Thread.sleep(3000);
+
+
+        stateDropDown.selectByVisibleText("Texas");
+        stateDropDown.selectByVisibleText("Florida");
+        List<WebElement> options = stateDropDown.getAllSelectedOptions();
+
+        for(WebElement a: options) {
+            System.out.println(a.getText());
+        }
+
+
+        driver.findElement(By.id("dropdownMenuLink")).click();
+        driver.findElement(By.linkText("Etsy")).click();
+
+
 
     }
 
