@@ -35,22 +35,22 @@ public class Vytrack_Assignment4 {
 
 
 
-
-    @Test
-    public void vyTrackVehPageAccess() throws InterruptedException {
-        Thread.sleep(2000);
-        Actions actions = new Actions(driver);
-        WebElement target = driver.findElement(By.xpath("//span[.='\n" + "    Fleet']"));
-        actions.moveToElement(target).perform();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//span[.='Vehicles']")).click();
-        Thread.sleep(1000);
-        String expectedTitle = "Car - Entities - System - Car - Entities - System";
-        String actualTitle = driver.getTitle();
-        String expectedHeader = "Cars";
-        String actualHeader = driver.findElement(By.xpath("//h1[@class='oro-subtitle']")).getText();
-        Assert.assertEquals(expectedTitle,actualTitle,"Expected title does not equal to actual title");
-        Assert.assertEquals(expectedHeader,actualHeader,"Expected header does not equal to actual header");}
+//
+//    @Test
+//    public void vyTrackVehPageAccess() throws InterruptedException {
+//        Thread.sleep(2000);
+//        Actions actions = new Actions(driver);
+//        WebElement target = driver.findElement(By.xpath("//span[.='\n" + "    Fleet']"));
+//        actions.moveToElement(target).perform();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//span[.='Vehicles']")).click();
+//        Thread.sleep(1000);
+//        String expectedTitle = "Car - Entities - System - Car - Entities - System";
+//        String actualTitle = driver.getTitle();
+//        String expectedHeader = "Cars";
+//        String actualHeader = driver.findElement(By.xpath("//h1[@class='oro-subtitle']")).getText();
+//        Assert.assertEquals(expectedTitle,actualTitle,"Expected title does not equal to actual title");
+//        Assert.assertEquals(expectedHeader,actualHeader,"Expected header does not equal to actual header");}
 
 
 @Test
@@ -63,7 +63,11 @@ public class Vytrack_Assignment4 {
     driver.findElement(By.xpath("//span[.='Vehicle Odometer']")).click();
     Thread.sleep(1000);
 
-    driver.findElement(By.xpath("//*[.='Anastasiia']")).click();
+    //driver.findElement(By.xpath("//*[.='Anastasiia']")).click();
+
+//td[.='driver123']
+    driver.findElement(By.xpath("//td[.='driver123']")).click();
+
     Thread.sleep(1000);
     driver.findElement(By.xpath("//*[@id=\"container\"]/div[2]/div[1]/div/div/div[1]/div[1]/div[3]/a")).click();
     Thread.sleep(1000);
@@ -81,7 +85,6 @@ public class Vytrack_Assignment4 {
     Thread.sleep(1000);
 
     Assert.assertEquals(text, "This value should not be blank.");
-
 
 }
 

@@ -144,14 +144,10 @@ String message="New order has been successfully added.";
     @Test
     public void test() throws InterruptedException {
 
+        Thread.sleep(2000);
 
+        SmartBearUtilities.verifyOrder(driver, "Paul Brow");
 
-        //6. Click on Order
-
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"ctl00_menu\"]/li[3]/a")).click();
-//7. Select familyAlbum from product,
-// s
 
     }
 
