@@ -29,7 +29,6 @@ public class IframePractice {
 
 @Test
     public void p1_iframe(){
-     //4. Assert: “Your content goes here.” Text is displayed.
 
 //iframe (many inside iframe of html) => 3 ways of location
 
@@ -49,6 +48,7 @@ public class IframePractice {
 //
 
 
+    //4. Assert: “Your content goes here.” Text is displayed.
 
     WebElement p = driver.findElement(By.tagName("p"));
     String actualText = p.getText();
